@@ -125,15 +125,112 @@ Use the BMI example from Challenge #1, and the code you already wrote, and impro
 //     console.log(`John's BMI (${MBIJohn}) is higher than Mark's BMI (${MBIMark})!`)
 // }else{
 //     console.log(`Mark's BMI (${MBIMark}) is higher than John's BMI (${MBIJohn})!`)
+// // }
+
+// const inputYear = '1991';
+// console.log(Number(inputYear), inputYear);
+// console.log(inputYear + 18);
+
+// console.log('I am ' + 23 + ' years old ');
+// console.log('23' - '10' -3);
+
+// const favourite = Number(prompt("What's your favourite number?"));
+// console.log(favourite);
+// console.log(typeof favourite);
+
+// const hasDriversLicense = true;
+// const hasGoodVision = true;
+
+// console.log(hasDriversLicense && hasGoodVision) ;
+// console.log(hasDriversLicense || hasGoodVision) ;
+
+// if (hasDriversLicense && hasGoodVision){
+//     console.log('Sarah is able to drive!');
+// } else{
+//     console.log('Someone else should drive...');
+
+// }
+// const isTired = true;
+// console.log(hasDriversLicense && hasGoodVision&& isTired);
+
+// if (hasDriversLicense && hasGoodVision && !isTired){
+//     console.log('Sarah is able to drive!');
+// } else{
+//     console.log('Someone else should drive...')
 // }
 
-const inputYear = '1991';
-console.log(Number(inputYear), inputYear);
-console.log(inputYear + 18);
+// Coding Challenge #3
 
-console.log('I am ' + 23 + ' years old ');
-console.log('23' - '10' -3);
+/*
+There are two gymnastics teams, Dolphins and Koalas. They compete against each other 3 times. The winner with the highest average score wins the a trophy!
 
-const favourite = Number(prompt("What's your favourite number?"));
-console.log(favourite);
-console.log(typeof favourite);
+1. Calculate the average score for each team, using the test data below
+2. Compare the team's average scores to determine the winner of the competition, and print it to the console. Don't forget that there can be a draw, so test for that as well (draw means they have the same average score).
+
+3. BONUS 1: Include a requirement for a minimum score of 100. With this rule, a team only wins if it has a higher score than the other team, and the same time a score of at least 100 points. HINT: Use a logical operator to test for minimum score, as well as multiple else-if blocks 😉
+4. BONUS 2: Minimum score also applies to a draw! So a draw only happens when both teams have the same score and both have a score greater or equal 100 points. Otherwise, no team wins the trophy.
+
+TEST DATA: Dolphins score 96, 108 and 89. Koalas score 88, 91 and 110
+TEST DATA BONUS 1: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123
+TEST DATA BONUS 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106
+
+GOOD LUCK 😀
+*/
+
+// const avgDolphins = (96 + 108 + 89) / 3;
+// const avgKoalas = (88 + 91 + 110) / 3;
+// console.log(avgDolphins, avgKoalas);
+
+// if (avgDolphins > avgKoalas) {
+//   console.log('Dolphins win the trophy 🏆');
+// } else if (avgKoalas > avgDolphins) {
+//   console.log('Koalas win the trophy 🏆');
+// } else if (avgDolphins === avgKoalas) {
+//   console.log('Both win the trophy!');
+// }
+
+
+// //bonus 1 + 2
+
+// if (avgDolphins > avgKoalas && avgDolphins >= 100){
+//     console.log("Dophins win the trophy 🏆");
+// } else if (avgDolphins < avgKoalas && avgKoalas >= 100) {
+//     console.log("Kolas win the trophy");
+// } else if (avgDolphins === avgKoalas && scoreDolphins >= 100 && avgKoalas >= 100) {
+//     console.log('Both win the trophy!');
+//   } else {
+//     console.log('No one wins the trophy 😭');
+//   }
+  
+
+
+// const day = 'monday';
+
+// switch (day) {
+//     case 'monday': 
+//         console.log('Plan course structure')
+//         console.log("Goto coding meetup")
+//         break;
+//     case 'tuesday':
+//         console.log('Prepare theory videos');
+//         break;
+//     case 'wednesday':
+//     case 'thursday':
+//         console.log('Write code examples');
+//         break;
+//     case 'friday':
+//     case 'saturday':
+//     case 'sunday': 
+//         console.log('enjoy the weekend 😋')
+//         break;
+//     default:
+//         console.log('Not a valid day!');
+
+// }
+
+
+const age = 23;
+
+age >= 18 ? console.log('I like to drink wine 🍷') : console.log('I like to drink water 💦');
+
+console.log(`I like to drink ${age >= 18 ? 'wine' : 'water '}`);
