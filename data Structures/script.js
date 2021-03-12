@@ -47,65 +47,65 @@
 //     console.log(mainIngredient);
 //     console.log(otherIngredients);
 //   },
+// // };
+
+// const airline = 'Tap Air Portugal';
+
+// const fixCaptalizationName = function (passenger) {
+//   const passengerLower = passenger.toLowerCase();
+//   const passengerCorrect =
+//     passengerLower[0].toUpperCase() + passengerLower.slice(1);
+//   console.log(passengerCorrect);
+// };
+// fixCaptalizationName('jOnaS');
+
+// // Comparing emails
+// const email = 'hoangthinh@gmail.com';
+// const loginEmail = ' hoangthinh@gmail.com\n';
+
+// // const lowerEmail = loginEmail.toLowerCase();
+// // const trimmedEmail = lowerEmail.trim();
+// const normalizedEmail = loginEmail.toLowerCase().trim();
+// console.log(normalizedEmail);
+// console.log(email === normalizedEmail);
+
+// //replacing
+// const priceUS = '228,43$';
+// const priceJP = priceUS.replace('$', '円').replace(',', '.');
+// console.log(priceJP);
+
+// const annoucement = 'All passengers come to barding door 23. Boarding door 23!';
+
+// console.log(annoucement.replace('door', 'gate'));
+// console.log(annoucement.replace(/door/g, 'gate'));
+
+// //Split and join
+// console.log('a+very+nice+string'.split('+'));
+// console.log('Jonas Schemedtmann'.split(' '));
+
+// const [firstName, lastName] = 'Jonas Schemedtmann'.split(' ');
+
+// const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+// console.log(newName);
+
+// const capitalizeName = function (name) {
+//   const names = name.split(' ');
+//   const namesUpper = [];
+
+//   for (const n of names) {
+//     // namesUpper.push(n[0].toUpperCase() + n.slice(1));
+//     namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+//   }
+//   console.log(namesUpper.join(' '));
 // };
 
-const airline = 'Tap Air Portugal';
+// capitalizeName('jessica ann smith davis');
+// capitalizeName('jonas schemedtmann');
 
-const fixCaptalizationName = function (passenger) {
-  const passengerLower = passenger.toLowerCase();
-  const passengerCorrect =
-    passengerLower[0].toUpperCase() + passengerLower.slice(1);
-  console.log(passengerCorrect);
-};
-fixCaptalizationName('jOnaS');
-
-// Comparing emails
-const email = 'hoangthinh@gmail.com';
-const loginEmail = ' hoangthinh@gmail.com\n';
-
-// const lowerEmail = loginEmail.toLowerCase();
-// const trimmedEmail = lowerEmail.trim();
-const normalizedEmail = loginEmail.toLowerCase().trim();
-console.log(normalizedEmail);
-console.log(email === normalizedEmail);
-
-//replacing
-const priceUS = '228,43$';
-const priceJP = priceUS.replace('$', '円').replace(',', '.');
-console.log(priceJP);
-
-const annoucement = 'All passengers come to barding door 23. Boarding door 23!';
-
-console.log(annoucement.replace('door', 'gate'));
-console.log(annoucement.replace(/door/g, 'gate'));
-
-//Split and join
-console.log('a+very+nice+string'.split('+'));
-console.log('Jonas Schemedtmann'.split(' '));
-
-const [firstName, lastName] = 'Jonas Schemedtmann'.split(' ');
-
-const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
-console.log(newName);
-
-const capitalizeName = function (name) {
-  const names = name.split(' ');
-  const namesUpper = [];
-
-  for (const n of names) {
-    // namesUpper.push(n[0].toUpperCase() + n.slice(1));
-    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
-  }
-  console.log(namesUpper.join(' '));
-};
-
-capitalizeName('jessica ann smith davis');
-capitalizeName('jonas schemedtmann');
-
-//padding
-const message = 'Go to gate 21!';
-console.log(message.padStart(23, '+').padEnd(35, '+'));
-// const plane = 'A320';
+// //padding
+// const message = 'Go to gate 21!';
+// console.log(message.padStart(23, '+').padEnd(35, '+'));
+// // const plane = 'A320';
 
 // console.log(plane[0]);
 // console.log(plane[1]);
@@ -396,3 +396,35 @@ TEST DATA FOR 6: Use players 'Davies', 'Muller', 'Lewandowski', and 'Kimmich'. T
 //   const half = min <= 45 ? 'FIRST' : 'SECOND';
 //   console.log(`[${half} HALF] ${min}: ${event}`);
 // }
+
+// document.body.append(document.createElement('textarea'));
+// document.body.append(document.createElement('button'));
+
+// document.querySelector('button').addEventListener('click', function () {
+//   const text = document.querySelector('textarea').value;
+//   const rows = text.split('\n');
+//   console.log(rows);
+
+//   for (const [i, row] of rows.entries()) {
+//     const [first, second] = row.toLowerCase().trim().split('_');
+//     const output = `${first}${second.replace(
+//       second[0],
+//       second[0].toUpperCase()
+//     )}`;
+//     console.log(`${output.padEnd(20)}${'✅'.repeat(i + 1)}`);
+//   }
+// });
+const flights =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+const getCode = str => str.slice(0, 3).toUpperCase();
+
+for (const flight of flights.split('+')) {
+  const [type, from, to, time] = flight.split(';');
+  // console.log(type);
+  const output = `${type.startsWith('_Delayed') ? '🔴' : ''} ${type.replaceAll(
+    '_',
+    ' '
+  )} from ${getCode(from)} to ${getCode(to)} (${time.replace(':', 'h')})`;
+  console.log(output);
+}
