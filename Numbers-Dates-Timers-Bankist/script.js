@@ -60,6 +60,7 @@ const labelSumIn = document.querySelector('.summary__value--in');
 const labelSumOut = document.querySelector('.summary__value--out');
 const labelSumInterest = document.querySelector('.summary__value--interest');
 const labelTimer = document.querySelector('.timer');
+console.log(labelTimer);
 
 const containerApp = document.querySelector('.app');
 const containerMovements = document.querySelector('.movements');
@@ -207,7 +208,7 @@ const startLogOutTimer = function () {
     time--;
   };
   //Set time to 5 minutes
-  let time = 120;
+  let time = 300;
   //Call the timer every second
   tick();
   const timer = setInterval(tick, 1000);
