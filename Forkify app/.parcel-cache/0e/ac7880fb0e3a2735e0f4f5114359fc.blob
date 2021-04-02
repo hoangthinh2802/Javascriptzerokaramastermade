@@ -1,0 +1,2 @@
+require('./View.js');
+class ResultsView {}
