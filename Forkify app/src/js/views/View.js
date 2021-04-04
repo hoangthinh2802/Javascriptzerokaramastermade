@@ -2,12 +2,14 @@ import icons from 'url:../../img/icons.svg';
 
 export default class View {
   _data;
-  render(data) {
+  render(data, render = true) {
     if (!data || (Array.isArray(data) && data.length === 0))
       return this.renderError();
 
     this._data = data;
     const markup = this._generateMarkup();
+
+    if (!render) return markup;
     this._clear();
     this._parentElement.insertAdjacentHTML('afterbegin', markup);
   }
@@ -25,7 +27,7 @@ export default class View {
 
     newElements.forEach((newEl, i) => {
       const curEl = curElements[i];
-      console.log(curEl, newEl.isEqualNode(curEl));
+      // console.log(curEl, newEl.isEqualNode(curEl));
 
       // Updates changed Text
       if (
